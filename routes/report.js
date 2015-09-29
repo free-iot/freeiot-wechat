@@ -1,9 +1,7 @@
 var express = require('express');
-var homeguardModel = require('../models/homeguard');
 var WechatAPI = require('wechat-api');
 var jsonfile = require('jsonfile');
 var router = express.Router();
-var aithinkerAPI = require('../lib/aithinker-api');
 
 
 var appConfig = jsonfile.readFileSync('./config.json');

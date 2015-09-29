@@ -1,6 +1,7 @@
 {
   "name": "freeiot-wechat",
   "description": "Wechat app server and demo to build IOT application on Wechat.",
+  "repository": "https://github.com/PandoCloud/freeiot-wechat.git",
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.13.2",
