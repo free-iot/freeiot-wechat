@@ -14,7 +14,9 @@ $(function(){
     if($(this).find(".device-status").hasClass("device-status-offline")){
       alert("该设备当前不可用");
     } else {
-      location.href = '/webapp?identifier=' + identifier;
+      if($(this).data("url")){
+        location.href = $(this).data("url") + "?from=wechat&identifier=" + identifier;
+      }
     }
   });
 });
