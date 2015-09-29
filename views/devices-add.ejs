@@ -1,0 +1,69 @@
+<% include header %>
+  <script>
+  $(function(){
+    blockUI();
+    wx.config({
+      debug: false,
+      beta: true,
+      appId: '<%= config.appId %>',
+      timestamp: '<%= config.timestamp %>',
+      nonceStr: '<%= config.nonceStr %>',
+      signature: '<%= config.signature %>',
+      jsApiList: [
+        'scanQRCode'
+      ]
+    });
+    wx.error(function (res) {
+  
+    });
+    wx.ready(function(){
+      wx.scanQRCode({
+        needResult: 1,
+        success: function( res ) {
+          uri = res.resultStr;
+          if( uri.indexOf('pando://identifier') == 0 ) {
+            var identifier = getUriParam(uri, 'identifier');
+            if( identifier ) {
+              $.ajax({
+                type: "POST",
+                url: '/common/devices/add?identifier=' + identifier,
+                contentType: 'application/json',
+                success: function(responseData) {
+                  if(responseData == 'ok'){
+                    alert('添加设备成功!');
+                    location.href = "/common/devices";
+                  }else{
+                    alert('添加设备失败!');
+                    wx.closeWindow();
+                  }
+                }
+              });
+              return;
+            } else {
+              alert('二维码错误!');
+              wx.closeWindow();
+            } 
+          } else {
+            alert('二维码错误!');
+            wx.closeWindow();
+          }
+        }
+      }); 
+    });
+
+    function getUriParam(uri, name) {
+      var splitIndex = uri.indexOf("?") + 1;
+      var paramStr = uri.substr(splitIndex, uri.length);
+
+      var arr = paramStr.split('&');
+      for (var i = 0; i < arr.length; i++) {
+        var kv = arr[i].split('=');
+        if (kv[0] == name) {
+          return kv[1];
+        }
+      }
+      return "";
+    }
+  });
+  </script>
+<% include footer %>

@@ -1,0 +1,16 @@
+{
+  "appid": "",
+  "appsecret": "",
+  "token": "",
+  "aeskey": "",
+  "hostname": "",
+  "pandocloud": {
+    "appkey": ""
+  },
+  "mysql": {
+    "host": "",
+    "port": 3306,
+    "user": "",
+    "password": ""
+  }
+}

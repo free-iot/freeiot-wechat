@@ -1,0 +1,38 @@
+body {
+  background-color: #f0eff5;
+  padding: 10px;
+  font-family: Helvetica, sans-serif;
+}
+
+.pic {
+  margin-top: 10px;
+}
+
+.pic > div {
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  margin: auto;
+}
+
+.tips {
+  margin: 20px auto;
+  line-height: 30px;
+  text-align: center;
+}
+
+.action {
+  margin-top:20px;
+  background-color: #06be04;
+  border-radius: 4px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  line-height: 40px;
+  font-size: 18px;
+}
+
+.wifi {
+  background-image: url(/common/img/wifi.png)
+}
+

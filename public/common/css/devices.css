@@ -1,0 +1,59 @@
+.device-list {
+  padding: 0 10px;
+  font-family: Helvetica, sans-serif;
+}
+
+.device-list > li {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: justify;
+  border-bottom: 1px solid #ccc;
+}
+
+.device-list .device-icon {
+  width: 64px;
+  height: 64px;
+  background-size: contain;
+}
+
+.device-list .device-info {
+  flex: 1;
+  box-flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  height: 64px;
+}
+
+.device-list .device-info .device-info-top {
+  height: 32px;
+  padding-top:14px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.device-list .device-info .device-info-bottom {
+  box-sizing: border-box;
+  color: #666;
+  height: 32px;
+  padding-top: 4px;
+  font-size: 14px;
+}
+
+.device-list .device-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin-top: 28px;
+}
+
+.device-list .device-status-online {
+  background-color: #ef5c68;
+}
+
+.device-list .device-status-offline {
+  background-color: #ccc;
+}

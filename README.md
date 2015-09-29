@@ -1,2 +1,2 @@
 # freeiot-wechat
-支持开放设备管理的微信公众账号
+Wechat app server and demo to build IOT application on Wechat.

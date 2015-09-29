@@ -1,0 +1,32 @@
+html, body {
+  min-height: 100%;
+}
+
+.ui-blocker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.ui-blocker .ui-blocker-wrapper {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  left: 50%;
+  top: 50%;
+  margin: -24px 0 0 -24px;
+  background-color: #ccc;
+  opacity: 0.8;
+  border-radius: 4px; 
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.ui-blocker .ui-blocker-spinner {
+  background-image: url(loading.gif);
+  height: 32px;
+  width: 32px;
+  margin: auto;
+}
