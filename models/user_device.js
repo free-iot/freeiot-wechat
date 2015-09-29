@@ -18,3 +18,9 @@ exports.getDeviceByUser = function(openid, identifier, cb) {
     return cb(err, result);
   })
 }
+
+exports.deleteUserDevice = function(openid, identifier, cb) {
+  pool.query('DELETE FROM wechat.user_device WHERE user_openid = ? and device_identifier = ?', [openid, identifier], function(err, result){
+    return cb(err, result);
+  })
+}

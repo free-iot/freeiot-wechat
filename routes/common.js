@@ -51,7 +51,7 @@ router.post('/devices/add', function(req, res, next) {
     if(err) {
       console.log("error get device info, identifier: " + identifier + ":" + err);
       return res.send(err);
-    } 
+    }
     userDevice.add({
         user_openid: req.wxopenid, 
         device_identifier: identifier,
@@ -81,10 +81,6 @@ router.use('/devices', wechatAuth);
 router.get('/devices', function(req, res, next) {
   userDevice.getUserDevices(req.wxopenid, function(err, result){
       console.dir(result); 
-      result.forEach(function(device){
-        var tmp = device.device_identifier.split('-', 2);
-        device.device_prefix = tmp[0] + '-' + tmp[1];
-      });
       res.render('devices', {
         "title": "我的设备",
         "javascripts": ["/common/js/devices.js"],
