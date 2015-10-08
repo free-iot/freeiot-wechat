@@ -6,7 +6,7 @@ $(function(){
         that.find(".device-status").removeClass("device-status-offline").addClass("device-status-online");
       }
       that.data("url", data.webapp);
-      that.find(".device-icon").css("background-image", "url("+data.icon")");
+      that.find(".device-icon").css("background-image", "url(" + data.icon + ")");
     }); 
   });
   $(".device-list > li").on("click", function(){
